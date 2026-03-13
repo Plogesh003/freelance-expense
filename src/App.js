@@ -28,7 +28,9 @@ function App() {
         expenses={filteredExpenses}
         deleteExpense={deleteExpense}
       />
-      <h3>Total Spent: ₹{expenses.reduce((total, expense) => total + parseInt(expense.amount), 0)}</h3>
+      <h3>
+        Total Spent: ₹{expenses.length > 0 ? expenses.reduce((total, expense) => total + parseInt(expense.amount), 0) : 0}
+      </h3>
     </div>
   );
 }
